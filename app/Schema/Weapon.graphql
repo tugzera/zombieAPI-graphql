@@ -12,7 +12,7 @@ type Weapon {
 }
 
 input WeaponInput {
-  name: String
+  name: String!
   bullets: Int
   attack_points: Int
   durability: Int
@@ -28,4 +28,6 @@ type Mutation {
   storeWeapon(data: WeaponInput!): Weapon
   updateWeapon(id: Int!, data: WeaponInput!): Weapon
   destroyWeapon(id: Int!): Weapon
+
+
 }

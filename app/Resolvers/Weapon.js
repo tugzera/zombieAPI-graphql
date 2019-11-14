@@ -14,15 +14,19 @@ module.exports = {
     }
   },
   Mutation: {
-    storeWeapon: async (_, { input }) => {
-      const item = await Weapon.create(input);
-      return item.toJson();
+    storeWeapon: async (_, { data }) => {
+      const item = await Weapon.create(data);
+      return item;
     },
-    updateWeapon: async (_, { id, input }) => {
+    updateWeapon: async (_, { id, data }) => {
       const item = await Weapon.findOrFail(id);
       item.merge(data);
       await item.save();
       return item;
+    },
+    destroyWeapon: async (_, { id }) => {
+      const item = await Weapon.findOrFail(id);
+      await item.delete();
     }
   }
 };
