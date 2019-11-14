@@ -1,0 +1,9 @@
+type Zombie {
+  name: String,
+}
+
+type Query {
+
+  zombies: Zombie
+}
+

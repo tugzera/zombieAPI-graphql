@@ -1,0 +1,31 @@
+type Weapon {
+  id: ID!
+  name: String
+  bullets: Int
+  attack_points: Int
+  durability: Int
+  price: Int
+  created_at: String
+  updated_at: String
+  server_created_at: String
+  server_updated_at: String
+}
+
+input WeaponInput {
+  name: String
+  bullets: Int
+  attack_points: Int
+  durability: Int
+  price: Int
+}
+
+type Query {
+  weapons: [Weapon]
+  weapon(id: Int!): Weapon
+}
+
+type Mutation {
+  storeWeapon(data: WeaponInput!): Weapon
+  updateWeapon(id: Int!, data: WeaponInput!): Weapon
+  destroyWeapon(id: Int!): Weapon
+}
