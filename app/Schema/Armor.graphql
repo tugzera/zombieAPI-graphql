@@ -1,0 +1,23 @@
+type Armor {
+  id: ID!
+  name: String
+  defense_points: Int
+  durability: Int
+  price: Int
+}
+
+input ArmorInput {
+  name: String
+  abilities: String
+}
+
+type Query {
+  armors: [Type]!
+  armor(id: Int!): Type
+}
+
+type Mutation {
+  storeArmor(data: ArmorInput!): Armor
+  updateArmor(id: Int!, data: ArmorInput!): Armor
+  destroyArmor(id: Int!): Armor
+}

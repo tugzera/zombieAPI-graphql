@@ -1,9 +1,53 @@
+type Type {
+  id: ID!
+  name: String
+  abilities: String
+}
+
+type Weapon {
+  id: ID!
+  name: String
+  bullets: Int
+  attack_points: Int
+  durability: Int
+  price: Int
+}
+
+input TypeInput {
+  id: Int!
+}
+
 type Zombie {
-  name: String,
+  id: ID!
+  name: String
+  hit_points: Int
+  brains_eaten: Int
+  speed: Int
+  turn_date: String
+  type_id: Int!
+  weapon: [Weapon]!
+  type: Type!
+
+}
+
+input  ZombieInput {
+  name: String
+  hit_points: Int
+  brains_eaten: Int
+  speed: Int
+  turn_date: String
+  type_id: Int!
 }
 
 type Query {
-
-  zombies: Zombie
+  zombies: [Zombie]!
+  zombie(id: Int!): Zombie
+  getWeapon(id: Int!): Zombie
 }
 
+type Mutation {
+  storeZombie(data: ZombieInput): Zombie
+  updateZombie(id: Int!, data: ZombieInput!):Zombie
+  destroyZombie(id: Int!):Zombie
+  addWeapon(id_zombie: Int!, id_weapon: Int!): Zombie
+}

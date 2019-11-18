@@ -13,8 +13,6 @@ class TypesSchema extends Schema {
       table.string("abilities");
       table.timestamp("created_at");
       table.timestamp("updated_at");
-      table.timestamp("server_created_at");
-      table.timestamp('server_updated_at');
     });
   }
 

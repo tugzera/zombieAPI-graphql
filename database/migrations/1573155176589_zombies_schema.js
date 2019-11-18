@@ -21,10 +21,8 @@ class ZombiesSchema extends Schema {
         .inTable("types")
         .onUpdate("CASCADE")
         .onDelete("CASCADE");
-        table.timestamp("created_at");
-        table.timestamp("updated_at");
-        table.timestamp("server_created_at");
-        table.timestamp('server_updated_at');
+      table.timestamp("created_at");
+      table.timestamp("updated_at");
     });
   }
 

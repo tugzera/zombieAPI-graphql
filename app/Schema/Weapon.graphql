@@ -5,10 +5,6 @@ type Weapon {
   attack_points: Int
   durability: Int
   price: Int
-  created_at: String
-  updated_at: String
-  server_created_at: String
-  server_updated_at: String
 }
 
 input WeaponInput {
@@ -28,6 +24,4 @@ type Mutation {
   storeWeapon(data: WeaponInput!): Weapon
   updateWeapon(id: Int!, data: WeaponInput!): Weapon
   destroyWeapon(id: Int!): Weapon
-
-
 }

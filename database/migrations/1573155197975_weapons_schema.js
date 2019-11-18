@@ -16,8 +16,6 @@ class WeaponsSchema extends Schema {
       table.integer("price");
       table.timestamp("created_at");
       table.timestamp("updated_at");
-      table.timestamp("server_created_at");
-      table.timestamp('server_updated_at');
     });
   }
 

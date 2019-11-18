@@ -1,0 +1,21 @@
+type Type {
+  id: ID!
+  name: String
+  abilities: String
+}
+
+input TypeInput {
+  name: String
+  abilities: String
+}
+
+type Query {
+  types: [Type]!
+  type(id: Int!): Type
+}
+
+type Mutation {
+  storeType(data: TypeInput!): Type
+  updateType(id: Int!, data: TypeInput!): Type
+  destroyType(id: Int!): Type
+}
